@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="theme-color" content="#4361ee">
+  <!-- Meta pour PWA -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="manifest" href="manifest.json">
+  <title>BLUEVISION - Chat Universel</title>
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <div class="app-container">
+    <header class="app-header">
+      <div class="header-content">
+        <h1><i class="fas fa-comment-dots"></i> BLUEVISION</h1>
+        <div class="user-info" id="user-info"></div>
+      </div>
+    </header>
+
+    <main class="chat-container">
+      <div class="chat-messages" id="messages"></div>
+      
+      <div class="message-input">
+        <input type="text" id="message" placeholder="Écrivez votre message..." autocomplete="off">
+        <button id="send"><i class="fas fa-paper-plane"></i></button>
+      </div>
+    </main>
+
+    <footer class="app-footer">
+      <div class="footer-content">
+        <p>© 2025 BLUEVISION - Tous appareils</p>
+        <p>Creation de la L'équipe Sasaki</p>
+        <div class="device-badges">
+          <i class="fab fa-android"></i>
+          <i class="fab fa-apple"></i>
+          <i class="fas fa-desktop"></i>
+          <i class="fas fa-tablet-alt"></i>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="assets/JS/main.js"></script>
+</body>
+</html>
