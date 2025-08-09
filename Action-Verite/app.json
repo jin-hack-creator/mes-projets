@@ -1,0 +1,37 @@
+{
+  "expo": {
+    "name": "action-verite-app",
+    "slug": "action-verite-app",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/adaptive-icon.png",
+    
+    "scheme": "actionveriteapp",
+    "userInterfaceStyle": "automatic",
+    
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#f3e5f5"
+      },
+      "package": "com.teamsasaki.actionveriteapp"
+    },
+    "web": {
+      
+    },
+    "plugins": [
+      "expo-router"
+    ],
+    "experiments": {
+      "typedRoutes": true
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "86885d53-a2c3-4dc4-8918-5686ce58b726"
+      }
+    }
+  }
+}

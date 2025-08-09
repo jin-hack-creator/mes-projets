@@ -1,0 +1,250 @@
+:root {
+  --primary-color: #007BFF; /* Bleu électrique */
+  --secondary-color: #00FFFF; /* Cyan néon */
+  --dark-color: #1a1a2e;
+  --light-color: #f8f9fa;
+  --text-color: #E5E5E5;
+  --bg-dark-alt: #0A0F1C; /* Fond très sombre pour le body */
+  --input-height: clamp(45px, 10vmin, 55px);
+  --card-width: clamp(300px, 90vw, 450px);
+  --border-radius-sm: 8px;
+  --border-radius-md: 12px;
+  --shadow-light: rgba(0, 0, 0, 0.2);
+  --shadow-medium: rgba(0, 0, 0, 0.4);
+  --shadow-neon: 0 0 10px var(--secondary-color), 0 0 20px var(--secondary-color);
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 2rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  height: 100%;
+  font-size: clamp(14px, 2.5vmin, 16px);
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--bg-dark-alt); /* Fond bleu foncé uni */
+  color: var(--text-color);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden; /* Cache le débordement des animations de fond */
+  position: relative;
+}
+
+/* Animation de fond subtile */
+body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 20% 80%, rgba(0, 123, 255, 0.1) 0%, transparent 50%),
+              radial-gradient(circle at 80% 20%, rgba(0, 255, 255, 0.1) 0%, transparent 50%);
+  animation: background-pulse 15s infinite alternate ease-in-out;
+  z-index: -1;
+}
+
+@keyframes background-pulse {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.1); opacity: 0.8; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
+  padding: var(--spacing-md);
+  position: relative;
+  z-index: 1;
+}
+
+.login-card-content {
+  background: rgba(255, 255, 255, 0.05); /* Glassmorphism */
+  border-radius: var(--border-radius-md);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  width: var(--card-width);
+  overflow: hidden;
+  color: var(--text-color); /* Texte clair sur glassmorphism */
+  animation: fadeInUp 0.5s ease-out;
+}
+
+.card-header {
+  text-align: center;
+  padding: clamp(1rem, 5vmin, 2rem);
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: white;
+  border-top-left-radius: var(--border-radius-md);
+  border-top-right-radius: var(--border-radius-md);
+  position: relative;
+  overflow: hidden;
+}
+
+.card-header::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: rgba(255, 255, 255, 0.1);
+  transform: rotate(45deg);
+  animation: shine 3s infinite;
+}
+
+@keyframes shine {
+  0% { transform: rotate(45deg) translate(-100%, -100%); }
+  100% { transform: rotate(45deg) translate(100%, 100%); }
+}
+
+.card-header h2 {
+  font-size: clamp(1.5rem, 6vmin, 2rem);
+  margin-bottom: 0.3rem;
+  color: white;
+  text-shadow: 0 0 8px var(--secondary-color); /* Text glow */
+  position: relative;
+  z-index: 2;
+}
+
+.card-body {
+  padding: clamp(1rem, 5vmin, 2rem);
+}
+
+.input-group {
+  margin-bottom: clamp(1rem, 4vmin, 1.5rem);
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: var(--text-color);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: clamp(0.9rem, 3vmin, 1rem);
+}
+
+input {
+  width: 100%;
+  padding: 0 1rem;
+  height: var(--input-height);
+  border: 2px solid rgba(0, 255, 255, 0.3); /* Bordure néon */
+  border-radius: var(--border-radius-sm);
+  font-size: clamp(0.9rem, 3vmin, 1rem);
+  transition: all 0.3s;
+  color: var(--text-color);
+  background-color: rgba(0, 0, 0, 0.2); /* Fond input légèrement transparent */
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.3), 0 0 10px var(--primary-color); /* Glow au focus */
+}
+
+input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+button {
+  width: 100%;
+  height: var(--input-height);
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: white;
+  border: none;
+  border-radius: var(--border-radius-sm);
+  font-weight: 600;
+  font-size: clamp(1rem, 3.5vmin, 1.1rem);
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s;
+  box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+}
+
+button:hover, button:focus {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 255, 255, 0.5); /* Halo lumineux */
+}
+
+#error-message {
+    color: #c62828;
+    text-align: center;
+    margin-top: var(--spacing-md);
+    font-size: 0.9rem;
+}
+
+@media (max-width: 600px) {
+    .login-container {
+        padding: 0.5rem;
+    }
+    .login-card-content {
+        width: 95vw;
+    }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-5px); }
+  40%, 80% { transform: translateX(5px); }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.error-message {
+  background-color: rgba(255, 0, 0, 0.1);
+  color: #c62828;
+  padding: 0.8rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: clamp(0.8rem, 3vmin, 0.9rem);
+  animation: fadeInUp 0.3s;
+  border: 1px solid #c62828;
+}
+
+.input-error {
+  border-color: #c62828 !important;
+  animation: shake 0.5s;
+}
+
+.loading .btn-text {
+  display: none;
+}
+
+.loading::after {
+  content: "";
+  width: 1.2rem;
+  height: 1.2rem;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: white;
+  animation: spin 1s ease-in-out infinite;
+}

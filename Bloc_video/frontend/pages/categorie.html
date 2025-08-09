@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catégorie - Bloc Vidéo</title>
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="../styles/public.css"> <!-- Lien vers le CSS spécifique -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <h1><a href="/" style="color:white; text-decoration:none;">Bloc Vidéo</a></h1>
+        <nav id="categories-nav">
+            <!-- Les catégories seront chargées ici -->
+        </nav>
+    </header>
+
+    <main>
+        <h2 id="categorie-nom"></h2>
+        <section id="videos-grid">
+            <!-- Les vidéos de la catégorie seront chargées ici -->
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Bloc Vidéo</p>
+    </footer>
+
+    <script type="module" src="../scripts/supabase.js"></script>
+    <script type="module" src="../scripts/categorie.js"></script>
+</body>
+</html>

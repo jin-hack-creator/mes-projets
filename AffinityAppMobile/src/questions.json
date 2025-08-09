@@ -1,0 +1,26 @@
+[
+  {
+    "type": "action",
+    "question": "Fais 10 pompes devant tout le monde !"
+  },
+  {
+    "type": "action",
+    "question": "Envoie un emoji coquin à la dernière personne de ton répertoire."
+  },
+  {
+    "type": "verite",
+    "question": "As-tu déjà embrassé quelqu’un dans cette pièce ?"
+  },
+  {
+    "type": "verite",
+    "question": "Quelle est la chose la plus folle que tu aies faite par amour ?"
+  },
+  {
+    "type": "action",
+    "question": "Fais une déclaration d’amour à la personne de ton choix."
+  },
+  {
+    "type": "verite",
+    "question": "As-tu déjà menti à propos de ton âge ?"
+  }
+]

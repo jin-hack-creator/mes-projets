@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Bloc Vidéo</title>
+    <link rel="stylesheet" href="../../styles/style.css">
+    <link rel="stylesheet" href="../../styles/dashboard.css"> <!-- Lien vers le CSS spécifique -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <h1>Dashboard Admin</h1>
+    </header>
+
+    <main>
+        <div class="dashboard-header">
+            <a href="ajouter-video.html" class="btn-add"><span class="btn-text">Ajouter une vidéo</span></a>
+            <button id="add-admin-btn" class="btn-add"><span class="btn-text">Ajouter un administrateur</span></button>
+            <button id="logout-btn" class="btn-logout"><span class="btn-text">Déconnexion</span></button>
+        </div>
+
+        <h2>Toutes les vidéos</h2>
+        <div class="table-container">
+            <div class="table-responsive">
+                <table id="videos-table">
+                    <thead>
+                        <tr>
+                            <th>Titre</th>
+                            <th>Catégorie</th>
+                            <th>Date de publication</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Les vidéos seront chargées ici -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div id="add-admin-section" style="display:none;" class="form-container">
+            <h2>Ajouter un nouvel administrateur</h2>
+            <form id="add-admin-form">
+                <div>
+                    <label for="admin-email">Email</label>
+                    <input type="email" id="admin-email" required>
+                </div>
+                <div>
+                    <label for="admin-password">Mot de passe</label>
+                    <input type="password" id="admin-password" required>
+                </div>
+                <button type="submit"><span class="btn-text">Créer l'administrateur</span></button>
+            </form>
+            <p id="add-admin-message"></p>
+        </div>
+    </main>
+
+    <script type="module" src="../../scripts/supabase.js"></script>
+    <script type="module" src="../../scripts/admin/dashboard.js"></script>
+
+</body>
+</html>

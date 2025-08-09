@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajouter une Vidéo - Bloc Vidéo</title>
+    <link rel="stylesheet" href="../../styles/style.css">
+    <link rel="stylesheet" href="../../styles/ajouter-video.css"> <!-- Lien vers le CSS spécifique -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <h1>Ajouter une nouvelle vidéo</h1>
+    </header>
+
+    <main>
+        <div class="form-container">
+            <form id="add-video-form">
+                <div>
+                    <label for="titre">Titre de la vidéo</label>
+                    <input type="text" id="titre" required>
+                </div>
+                <div>
+                    <label for="description">Description</label>
+                    <textarea id="description" rows="5" required></textarea>
+                </div>
+                <div>
+                    <label for="video-file">Fichier vidéo</label>
+                    <input type="file" id="video-file" accept="video/*" required>
+                </div>
+                <div>
+                    <label for="thumbnail-file">Fichier miniature</label>
+                    <input type="file" id="thumbnail-file" accept="image/*" required>
+                </div>
+                <div>
+                    <label for="categorie">Catégorie</label>
+                    <select id="categorie" required>
+                        <!-- Les catégories seront chargées ici -->
+                    </select>
+                </div>
+                <button type="submit"><span class="btn-text">Publier la vidéo</span></button>
+            </form>
+            <p id="success-message" style="display:none;"></p>
+            <p id="error-message" style="display:none;"></p>
+        </div>
+    </main>
+
+    <script type="module" src="../../scripts/supabase.js"></script>
+    <script type="module" src="../../scripts/admin/ajouter-video.js"></script>
+
+</body>
+</html>

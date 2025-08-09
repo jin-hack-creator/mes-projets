@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vidéo - Bloc Vidéo</title>
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="../styles/public.css"> <!-- Lien vers le CSS spécifique -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <h1><a href="/" style="color:white; text-decoration:none;">Bloc Vidéo</a></h1>
+        <nav id="categories-nav">
+            <!-- Les catégories seront chargées ici -->
+        </nav>
+    </header>
+
+    <div class="welcome-message-container">
+        <div class="welcome-message-card">
+            <h2>Bienvenue sur Bloc Vidéo !</h2>
+            <p>Je suis Jinhuyk, le créateur de cette plateforme. J'espère que les cœurs ne sont pas brisés et les âmes frustrées. C'était juste pour le fun ! J'espère que vous allez vous amuser avec ces vidéos. Si vous me cherchez, je ne suis pas loin.</p>
+        </div>
+    </div>
+
+    <main id="video-details">
+        <!-- Le contenu de la vidéo sera chargé ici -->
+    </main>
+
+    <div class="action-buttons-container">
+        <button id="open-note-modal-btn" class="btn-add"><span class="btn-text">Laisser une note anonyme</span></button>
+    </div>
+
+    <div id="anonymous-note-modal" class="modal-overlay" style="display:none;">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Votre note anonyme</h2>
+            <form id="anonymous-note-form">
+                <textarea id="note-content" placeholder="Écrivez votre note ici..." rows="5" required></textarea>
+                <button type="submit" class="btn-add"><span class="btn-text">Envoyer la note</span></button>
+            </form>
+            <p id="note-message" style="margin-top:1rem;"></p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Bloc Vidéo</p>
+    </footer>
+
+    <script type="module" src="../scripts/supabase.js"></script>
+    <script type="module" src="../scripts/video.js"></script>
+</body>
+</html>

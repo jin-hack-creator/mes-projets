@@ -1,0 +1,181 @@
+body {
+  background-color: var(--dark-color); /* Fond sombre pour le dashboard */
+}
+
+.dashboard-header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-xl);
+}
+
+.dashboard-header h2 {
+    font-size: 2.2rem;
+    position: relative;
+    padding-bottom: var(--spacing-sm);
+    margin-bottom: var(--spacing-lg);
+}
+
+.dashboard-header h2::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--secondary-color), transparent);
+    box-shadow: 0 0 8px var(--secondary-color);
+}
+
+.btn-logout,
+.btn-add {
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 50px; /* Boutons arrondis */
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.btn-logout {
+    background-color: #DC3545; /* Rouge pour déconnexion */
+    color: var(--light-color);
+}
+
+.btn-logout:hover {
+    background-color: #EF5350;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(239,83,80,0.4);
+}
+
+.btn-add {
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color)); /* Dégradé néon */
+    color: var(--light-color);
+    text-decoration: none;
+    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+}
+
+.btn-add:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 255, 255, 0.5); /* Halo lumineux */
+}
+
+/* Glassmorphism pour le conteneur du tableau */
+.table-container {
+    background: rgba(255, 255, 255, 0.08); /* Plus clair pour la lisibilité */
+    border-radius: var(--border-radius-md);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Bordure légèrement plus visible */
+    padding: var(--spacing-lg);
+    margin-top: var(--spacing-lg);
+}
+
+.table-responsive {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 0;
+    min-width: 800px;
+}
+
+th, td {
+    padding: var(--spacing-md);
+    text-align: left;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08); /* Bordures plus visibles */
+    color: var(--text-color);
+}
+
+th {
+    background-color: rgba(0, 0, 0, 0.25); /* Fond d'en-tête plus clair */
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    color: var(--secondary-color);
+}
+
+tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.03); /* Lignes alternées légèrement plus visibles */
+}
+
+.actions a,
+.actions button {
+    margin-right: var(--spacing-sm);
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 1.2rem; /* Taille des icônes */
+}
+
+.actions a:hover,
+.actions button:hover {
+    color: var(--secondary-color);
+    transform: scale(1.1); /* Léger zoom */
+    text-shadow: 0 0 5px var(--secondary-color); /* Glow */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .dashboard-header {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .btn-logout,
+    .btn-add,
+    #add-admin-btn {
+        width: 100%;
+        margin-bottom: var(--spacing-md);
+    }
+    .btn-logout {
+        margin-bottom: 0;
+    }
+
+    .table-container {
+        padding: var(--spacing-md);
+    }
+
+    table {
+        display: block;
+        width: 100%;
+    }
+    thead {
+        display: none;
+    }
+    tbody {
+        display: block;
+    }
+    tr {
+        display: block;
+        margin-bottom: var(--spacing-md);
+        border: 1px solid rgba(255,255,255,0.1);
+        border-radius: var(--border-radius-sm);
+        background-color: rgba(255, 255, 255, 0.05);
+    }
+    td {
+        display: block;
+        text-align: right;
+        border-bottom: 1px dotted rgba(255,255,255,0.1);
+    }
+    td:last-child {
+        border-bottom: none;
+    }
+    td:before {
+        content: attr(data-label);
+        float: left;
+        font-weight: bold;
+        color: var(--text-color);
+        margin-right: var(--spacing-md);
+    }
+}
